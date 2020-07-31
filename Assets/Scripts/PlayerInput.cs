@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Shooter _shooter;
 
@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
             _shooter.TryShoot();
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("n"))
             _shooter.ChangeCurrentBulletType();
     }
 }

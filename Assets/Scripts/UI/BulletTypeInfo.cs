@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class BulletType : MonoBehaviour
+public class BulletTypeInfo : MonoBehaviour
 {
     [SerializeField] private TMP_Text _bulletTypeInfo;
     [SerializeField] private Shooter _shooter;

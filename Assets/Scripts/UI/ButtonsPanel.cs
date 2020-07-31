@@ -12,13 +12,13 @@ public class ButtonsPanel : MonoBehaviour
     private void OnEnable()
     {
         _restart.onClick.AddListener(OnRestartButtonClick);
-        _spawnEnemy.onClick.AddListener(SpawnEnemy);
+        _spawnEnemy.onClick.AddListener(OnSpawnEnemyButtonClick);
     }
 
     private void OnDisable()
     {
         _restart.onClick.RemoveListener(OnRestartButtonClick);
-        _spawnEnemy.onClick.RemoveListener(SpawnEnemy);
+        _spawnEnemy.onClick.RemoveListener(OnSpawnEnemyButtonClick);
     }
 
     public void OnRestartButtonClick()
@@ -26,7 +26,7 @@ public class ButtonsPanel : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void SpawnEnemy()
+    public void OnSpawnEnemyButtonClick()
     {
         _enemySpawner.Spawn();
     }
