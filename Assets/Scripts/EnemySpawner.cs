@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,6 +8,8 @@ public class EnemySpawner : MonoBehaviour
 
     private Transform[] _spawnPoints;
     private int _currentPoint = 0;
+
+    public UnityAction<Enemy> Spawned;
 
     private void Awake()
     {
@@ -22,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
         else
             _currentPoint++;
 
-        Instantiate(_enemyPrefab, _spawnPoints[_currentPoint]);
+        Enemy enemy = Instantiate(_enemyPrefab, _spawnPoints[_currentPoint]);
+        Spawned?.Invoke(enemy);
     }
 }

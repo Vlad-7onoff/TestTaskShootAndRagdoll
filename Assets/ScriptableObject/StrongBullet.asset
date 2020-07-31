@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9b83596b9455941b7c0141cf35e7eb, type: 3}
   m_Name: StrongBullet
   m_EditorClassIdentifier: 
-  _speed: 10
+  _speed: 5
   _power: 100

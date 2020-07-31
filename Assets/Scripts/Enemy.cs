@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Enemy : MonoBehaviour
     private Rigidbody[] _rigidbodies;
     private Limb[] _limbs;
     private bool _alive = true;
+
+    public UnityAction Died;
 
     private void OnDisable()
     {
@@ -36,6 +39,7 @@ public class Enemy : MonoBehaviour
 
             for (int i = 0; i < _rigidbodies.Length; i++)
                 _rigidbodies[i].isKinematic = false;
+            Died.Invoke();
         }
         Destroy(gameObject, _timeDestroy);
     }
